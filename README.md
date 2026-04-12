@@ -1,99 +1,101 @@
-# Bank-Valuation-Model-JPMorgan-DCF-vs-DDM-Analysis
+# 📊 Bank Valuation Model – JPMorgan (DCF vs DDM Analysis)
 
-## Overview
+## 🔹 Overview
 
-This project builds a structured equity valuation model for JPMorgan using Power BI, combining a Free Cash Flow to Firm (FCFF) based Discounted Cash Flow approach with a Dividend Discount Model (DDM).
+This project builds a structured equity valuation model for JPMorgan using Power BI, combining a Free Cash Flow to Firm (FCFF)-based Discounted Cash Flow (DCF) approach with a Dividend Discount Model (DDM).
 
-The objective was to evaluate valuation consistency across methods and highlight the limitations of traditional DCF when applied to banking institutions.
-
----
-
-## Model Structure
-
-The model integrates:
-
-- Income Statement  
-- Balance Sheet  
-- Cash Flow Statement  
-
-Raw financial data was transformed and standardized using Power Query, enabling consistent calculation of valuation metrics across time.
-
-A mapping table was created to align raw line items with standardized financial categories.
+The objective is to evaluate valuation consistency across methods and highlight the limitations of traditional DCF when applied to banking institutions.
 
 ---
 
-## Valuation Approaches
+## 🔹 Key Findings
 
-### 1. FCFF-based DCF
-
-- FCFF derived from operating metrics  
-- Discounted using WACC  
-- Incorporates assumptions for growth and capital structure  
-
-### 2. Dividend Discount Model (DDM)
-
-- Based on latest annual dividend  
-- Applies constant growth assumption  
-- Produces intrinsic value per share  
+- **DCF Valuation:** ₹1.38T  
+- **DDM Valuation:** ₹187.97  
+- **Market Price:** ₹1.50K  
+- **Conclusion:** DCF output is structurally distorted; DDM provides a more reliable valuation anchor  
+- **Primary Driver:** Cost of equity (13%) and dividend growth assumptions  
 
 ---
 
-## Key Features
+## 🔹 Why DCF Fails for Banks
 
-- Data cleaning and normalization using Power Query  
-- Standardization of financial line items via mapping table  
-- Calculation of Net Income, EBIT proxy, Depreciation, CapEx, and Working Capital  
-- WACC computation using CAPM inputs  
-- FCFF estimation and DCF valuation logic  
-- Dividend aggregation and DDM valuation  
-- Calendar table integration for time-based analysis  
+Traditional DCF (FCFF) breaks down for banks due to structural differences:
 
----
+- **Debt is operational, not financing**  
+  Deposits act as a core input rather than a funding choice  
 
-## Assumptions
+- **No clear reinvestment definition**  
+  Lending growth and capital adequacy obscure reinvestment metrics  
 
-- Risk Free Rate: 7%  
-- Beta: 1.1  
-- Market Return: 12%  
-- WACC: 12.5%  
-- Growth Rate: 4%  
+- **WACC becomes less meaningful**  
+  Separation of debt and equity loses relevance in banking  
 
----
+- **Regulatory capital constraints**  
+  Basel norms and capital requirements restrict deployable cash flows  
 
-## Key Findings
-
-### 1. DCF limitations for banks
-
-Traditional DCF assumptions do not hold well for banks. Debt is treated as an operating component rather than purely financing, which distorts capital structure assumptions and affects FCFF reliability.
-
-### 2. Working Capital is not meaningful
-
-Conventional working capital definitions break down in banking due to the nature of deposits and lending activities. This reduces the effectiveness of FCFF-based modeling.
-
-### 3. DDM provides a more stable valuation signal
-
-Dividend-based valuation aligns better with how banks generate and distribute value. The DDM approach produced a more stable and interpretable intrinsic value compared to DCF.
-
-### 4. Sensitivity to assumptions
-
-Valuation outcomes are highly sensitive to WACC and growth rate inputs, reinforcing the importance of transparent and realistic assumptions.
+- **Cash flow volatility**  
+  FCFF fluctuates with interest rate cycles, reducing reliability  
 
 ---
 
-## Results
+## 🔹 Alternative Approach: Dividend Discount Model (DDM)
 
-- WACC: **12.5%**  
-- DDM Valuation: **~$5.5 per share**  
+Given the limitations of DCF, DDM is used as a more suitable valuation method.
 
-DCF results showed higher variability due to structural limitations in modeling banking cash flows.
+**Rationale:**
+
+- Banks distribute value primarily through dividends  
+- Dividends are more stable and regulated  
+- Aligns valuation with actual shareholder cash flows  
+
+**Model Logic:**
+
+- Based on expected future dividends  
+- Cost of equity derived using CAPM  
+- Growth estimated using historical dividend trends  
 
 ---
 
-## Conclusion
+## 🔹 Key Assumptions
 
-This project demonstrates that while DCF remains a widely used valuation method, it is not always appropriate for financial institutions. Alternative approaches such as DDM can provide more reliable insights when aligned with the business model.
+- **Cost of Equity:** 13% (CAPM-based)  
+- **Dividend Growth Rate:** Based on historical trends  
+- **Terminal Growth Rate:** Conservative, aligned with long-term macro growth  
+- **Beta:** Industry benchmark / assumed  
+- **Dividend Stability:** Derived from historical payout consistency  
 
-The combination of both methods offers a more balanced perspective on valuation.
+---
+
+## 🔹 Power BI Dashboard
+
+The interactive dashboard enables dynamic exploration of valuation drivers:
+
+- Visualizes **cash flow breakdown (operating, investing, financing)**  
+- Displays **DCF valuation vs market price comparison**  
+- Tracks **historical dividend trends**  
+- Includes **DDM sensitivity analysis (growth vs cost of equity)**  
+
+**User Controls:**
+
+- Adjust growth rate (g)  
+- Modify cost of equity (Ke)  
+- Instantly observe valuation impact  
+
+---
+
+## 🔹 Limitations
+
+- High sensitivity to **growth and cost of equity assumptions**  
+- Dividend projections rely on historical trends which may not persist  
+- Regulatory changes can impact payout capacity  
+- DCF results are included for comparison but are not reliable for banks  
+
+---
+
+## 🔹 Final Takeaway
+
+DCF may be the default valuation tool, but for banks it can produce misleading results. A dividend-based approach provides a cleaner and more realistic estimate of shareholder value.
 
 ---
 
