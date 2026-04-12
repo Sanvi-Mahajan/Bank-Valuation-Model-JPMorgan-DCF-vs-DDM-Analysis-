@@ -68,6 +68,17 @@ Given the limitations of DCF, DDM is used as a more suitable valuation method.
 ---
 
 ## 🔹 Power BI Dashboard
+<p align="center">
+  <img src="fcff.png" width="700">
+</p>
+
+<p align="center">
+  <img src="ddm.png" width="700">
+</p>
+
+<p align="center">
+  <img src="comparison.png" width="700">
+</p>
 
 The interactive dashboard enables dynamic exploration of valuation drivers:
 
